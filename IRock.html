@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>iRock - the virtual pet rock</title>
+    <script> type="text/javascript">
+      Var userName;
+      Function greetUser() {
+        Alert('Hello, I'm a rock');
+      }
+      Function touchRock() {
+        If (userName) {
+          Alert("I like the attention, " + userName + ". Thank you");
+        }
+        Else {
+          userName = prompt("What is your name?", "Enter your name here.");
+          If (userName)
+            Alert ("it is good to meet you" + userName + ".");
+        }
+      
