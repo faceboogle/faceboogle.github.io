@@ -15,4 +15,16 @@
           If (userName)
             Alert ("it is good to meet you" + userName + ".");
         }
-      
+      Document.getElementById("RockImg").src = "IMG000004.PNG";
+      setTimeout("document.getElementById('rockImg').src = 'IMG000002.PNG';", 10 * 1000);
+      }
+    </script>
+  </head>
+
+  <body onload="greetUser();">
+    <div style="margin-top:100px; text-align:center">
+      <img id="rockImg" src="IMG000002.PNG" alt="iRock" style="cursor:pointer" onclick="touchRock();" />
+    </div>
+  </body>
+</html>
+
