@@ -4,11 +4,13 @@
     <link rel="stylesheet" type="text/css" href="donuts.css" />
     <script type="text/javascript">
       Function updateOrder() {
-        Const TAXRATE;
-        Const DONUTPRICE;
-        var numCakeDonuts = document.getElementById("cakedonuts").value;
-        var numGlazedDonuts = document.getElementById("glazeddonuts").value;
-        var sybTotal = (numCakeDonuts + numGlazedDonuts) * DONUTPRICE;
+        Const TAXRATE = 0.0925;
+        Const DONUTPRICE = 0.50;
+        var numCakeDonuts = parseInt(document.getElementById("cakedonuts").value);
+        If (isNaN(numCakeDonuts)) numCakeDonuts = 0;
+        var numGlazedDonuts = parseInt(document.getElementById("glazeddonuts").value);
+        If (isNaN(numGlazedDonuts)) numGlazedDonuts = 0;
+        var subTotal = (numCakeDonuts + numGlazedDonuts) * DONUTPRICE;
         var tax = subTotal * TAXRATE;
         var total= subTotal + tax;
         Document.getElementById("subtotal").value = "$" + subTotal.toFixed(2);
