@@ -5,6 +5,7 @@
       function touchRock() {
         userName = prompt("think of a number", "type it here");
         alert('your number is' + xnum + ".");
+        document.getElementById("MyEdit").innerHTML = "My new text!"; 
       }
     </script>  
   </head>
@@ -12,6 +13,10 @@
   <body onload="touchRock();">
 
   Zany Time Table non-Generator
+
+    <div id="MyEdit">
+    This text will change
+    </div>
 
   </body>
 </html>
