@@ -1,12 +1,19 @@
 <html>
   <head>
     <title> farm simulator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript">
+      var currentYear = 2016
+      function newYear() {
+        currentYear += currentYear + 1;
+      }
   </head>
   <body>
-    <div> your farm name:</div>
-    <div> established:</div>
+    <div>Your farm name:</div>
+    <div>Established:</div>
   <hr>
     <div>current year:</div>
     <div>bank balance</div>
   <hr>
+      <input type="button" value="farm for another year" onclick="newYear();" />
 </html>
