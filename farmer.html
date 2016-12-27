@@ -4,13 +4,22 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript">
       var currentYear = 2016
+      function replaceNodeText(id,newText) {
+        var node = document.getelementById(id);
+        while (node.firstChild)
+          node.removeChild(node.firstChild);
+        node.appendChild(document.createTextNode(newText));
+      }
+      function initFarm() {
+        var farmName = prompt{'What is your farm called?'", "Type name here");>
+        replaceNodeText(name,'Your farm name:' + farmName);                      
       function newYear() {
         currentYear += currentYear + 1;
       }
     </script>
   </head>
   <body onload="alert('welcome to farm simulator');">
-    <div>Your farm name: Monkey Chops Farm</div>
+    <p id="name">Your farm name: Monkey Chops Farm</p>
     <div>Established: 2016</div>
   <hr>
     <div>current year: currentYear</div>
