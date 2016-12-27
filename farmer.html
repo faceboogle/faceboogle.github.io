@@ -14,14 +14,17 @@
         var farmName = prompt('What is your farm called?', "Type name here");
           if (farmName) {
             alert("changing farm name");
-            replaceNodeText(fname,'Your farm name:' + farmName); 
+            //             replaceNodeText(fname,'Your farm name:' + farmName); 
+            var textnode = document.createTextNode("Water");
+            var item = document.getElementById("fname").childNodes[0];
+            item.replaceChild(textnode, item.childNodes[0]);
         }
       }
     </script>
   </head>
   
   <body onload="initFarm();">
-  <p id="version"> welcome to farm simulator v0.03</p>
+  <p id="version"> welcome to farm simulator v0.04</p>
     <p id="fname">Your farm name: Monkey Chops Farm</p>
     <div>Established: 2016</div>
   <hr>
