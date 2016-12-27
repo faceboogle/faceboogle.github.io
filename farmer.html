@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title> farm simulator</title>
@@ -12,15 +13,15 @@
       function initFarm() {
         var farmName = prompt('What is your farm called?', "Type name here");
           if (farmName) {
-            replaceNodeText(name,'Your farm name:' + farmName); 
+            replaceNodeText(fname,'Your farm name:' + farmName); 
         }
       }
     </script>
   </head>
   
   <body onload="initFarm();">
-  <p id="version"> welcome to farm simulator v0.01</p>
-    <p id="name">Your farm name: Monkey Chops Farm</p>
+  <p id="version"> welcome to farm simulator v0.02</p>
+    <p id="fname">Your farm name: Monkey Chops Farm</p>
     <div>Established: 2016</div>
   <hr>
     <div>current year: currentYear</div>
