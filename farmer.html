@@ -13,24 +13,30 @@
       function initFarm() {
         var farmName = prompt('What is your farm called?', "Type name here");
           if (farmName) {
-            alert("changing farm name");
+        
             //             replaceNodeText(fname,'Your farm name:' + farmName); 
-            var textnode = document.createTextNode("Water fram");
+            var textnode = document.createTextNode("Water farm");
             var item = document.getElementById("fname").childNodes[0];
             item.replaceChild(textnode, item.childNodes[0]);
+        }
+      function myFunction() {
+        var textnode = document.createTextNode("Water");
+        var item = document.getElementById("myList").childNodes[0];
+        item.replaceChild(textnode, item.childNodes[0]);
         }
       }
     </script>
   </head>
   
   <body onload="initFarm();">
-  <p id="version"> welcome to farm simulator v0.05</p>
+    <p id="version">Welcome to farm simulator v0.1</p>
     <p id="fname">Your farm name: Monkey Chops Farm</p>
     <div>Established: 2016</div>
   <hr>
     <div>current year: currentYear</div>
-    <div>bank balance: £0.00</div>
+    <div>bank balance: £0.06</div>
   <hr>
-
+  <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+    <button onclick="myFunction()">Try it</button>
   </body>
 </html>
