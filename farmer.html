@@ -3,15 +3,19 @@
   <head>
     <title>farm simulator</title>
     <script>
-      function myFunction(newText) {
+      var bankBal = 0
+      function myFunction(newText, fieldID) {
          var newItem = document.createElement("P");
          var textnode = document.createTextNode("Farm name: " + newText);
          newItem.appendChild(textnode);
-         document.body.replaceChild(newItem, document.getElementById("fname"));
+         document.body.replaceChild(newItem, document.getElementById(fieldID));
       }
       function playerName() {
          var farmName = prompt('What is your farm called?', "Type name here");
-         myFunction(farmName);
+         myFunction(farmName, "fname");
+      }
+      function plusBank() {
+         myFunction(bankBal, "bank")
       }
     </script>
   </head>
@@ -21,9 +25,10 @@
     <p id="fnord">Established: 2016</p>
   <hr>
     <div>current year: <em>not yet implemented</em></div>
-    <div>bank balance: £0.09</div>
+    <div id="bank">bank balance: £0</div>
   <hr>
     
     <button onclick="playerName()">Change Farm Name</button>
+    <button onclick="plusBank()">Click to add money</button>
   </body>
 </html>
