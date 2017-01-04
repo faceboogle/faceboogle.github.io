@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> farm simulator</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript">
-      function replaceNodeText(id,newText) {
-        var node = document.getelementById(id);
-        while (node.firstChild)
-          node.removeChild(node.firstChild);
-        node.appendChild(document.createTextNode(newText));
+    <title>farm simulator</title>
+    <script>
+      function myFunction(newText) {
+         var newItem = document.createElement("P");
+         var textnode = document.createTextNode("Farm name: " + newText);
+         newItem.appendChild(textnode);
+         document.body.replaceChild(newItem, document.getElementById("fname"));
       }
-      function initFarm() {
-        var farmName = prompt('What is your farm called?', "Type name here");
-          if (farmName) {
-        
-            //             replaceNodeText(fname,'Your farm name:' + farmName); 
-            var textnode = document.createTextNode("Water farm");
-            var item = document.getElementById("fname").childNodes[0];
-            item.replaceChild(textnode, item.childNodes[0]);
-        }
-      function myFunction() {
-        var textnode = document.createTextNode("Water");
-        var item = document.getElementById("myList").childNodes[0];
-        item.replaceChild(textnode, item.childNodes[0]);
-        }
+      function playerName() {
+         var farmName = prompt('What is your farm called?', "Type name here");
+         myFunction(farmName);
       }
     </script>
   </head>
   
-  <body onload="initFarm();">
-    <p id="version">Welcome to farm simulator v0.1</p>
-    <p id="fname">Your farm name: Monkey Chops Farm</p>
-    <div>Established: 2016</div>
+  <body>   
+    <p id="fname">Farm name: Monkey Chops Farm</p>
+    <p id="fnord">Established: 2016</p>
   <hr>
     <div>current year: <em>not yet implemented</em></div>
-    <div>bank balance: £0.07</div>
+    <div>bank balance: £0.09</div>
   <hr>
-  <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
-    <button onclick="myFunction()">Try it</button>
+    
+    <button onclick="playerName()">Change Farm Name</button>
   </body>
 </html>
