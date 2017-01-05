@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>farm simulator</title>
     <script>
-      var bankBal = 0
-      function myFunction(newText, fieldID) {
-         var newItem = document.createElement("P");
-         var textnode = document.createTextNode("Farm name: " + newText);
+      var balance=0;
+      var year=2016;
+      function updElem(value, targ, elemType) {
+         // value = new txt, targ = node id, elemType = P,H1,etc
+         var node = document.getElementById(targ);
+         node.removeChild(node.firstChild);
+         var newItem = document.createElement(elemType);
+         var textnode = document.createTextNode(value);
          newItem.appendChild(textnode);
-         document.body.replaceChild(newItem, document.getElementById(fieldID));
+         node.appendChild(newItem, node);     
       }
-      function playerName() {
-         var farmName = prompt('What is your farm called?', "Type name here");
-         myFunction(farmName, "fname");
+      function increase() {
+         var randomNumber=Math.floor(Math.random()*101)
+         balance=balance+randomNumber;
+         updElem("Bank Balance: £"+balance,"bank","DIV");
+         updElem('Last year you grew potatoes and sold them for £'+randomNumber, "sales", "LI");
+         year++;
+         updElem("Current year: "+year, "year", "DIV");
+         // randomise the weather
+         updElem("The weather will be rainy next year", "weather", "LI");
       }
-      function plusBank() {
-         myFunction(bankBal, "bank")
+      function renameFarm() {
+         var farmName = prompt("What farm name?", "type here");
+         if (true) {  // why not.. if(farmName) ?
+            updElem('Farm name: '+farmName, "fname", "DIV");
+         }
       }
     </script>
   </head>
   
   <body>   
-    <p id="fname">Farm name: Monkey Chops Farm</p>
-    <p id="fnord">Established: 2016</p>
+    <div id="fname">Farm name: Monkey Chops Farm</div>
+    <div>Established: 2016</div>
   <hr>
-    <div>current year: <em>not yet implemented</em></div>
-    <div id="bank">bank balance: £0</div>
+    <div id="year">Current year: 2016</div>
+    <div id="bank">Bank Balance: £0</div>
   <hr>
-    
-    <button onclick="playerName()">Change Farm Name</button>
-    <button onclick="plusBank()">Click to add money</button>
+    <p>Farm report:<p>
+    <UL>
+      <li id='weather'>The weather will be good next year</li>
+      <li>People like to eat potatoes</li>
+      <li id='sales'>Last year you didn't grow anything</li>
+    </UL>
+      <button onclick="increase()">Grow potatoes</button>
+      <button onclick="renameFarm()">Change farm name</button>
   </body>
 </html>
