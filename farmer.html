@@ -14,14 +14,24 @@
          node.appendChild(newItem, node);     
       }
       function increase() {
-         var randomNumber=Math.floor(Math.random()*101)
+         switch (randomNumber=Math.floor(Math.random()*3)) {
+           case 0:
+             weather = "sunny";
+             break;
+          case 1:
+             weather = "cold";
+             break;
+          default:
+             weather = "rainy";
+             break;
+          } // randomise the weather
+          updElem("The weather will be " + weather + " next year", "weather", "LI");
+         var randomNumber=Math.floor((Math.random()*101)+50)
          balance=balance+randomNumber;
          updElem("Bank Balance: £"+balance,"bank","DIV");
          updElem('Last year you grew potatoes and sold them for £'+randomNumber, "sales", "LI");
          year++;
          updElem("Current year: "+year, "year", "DIV");
-         // randomise the weather
-         updElem("The weather will be rainy next year", "weather", "LI");
       }
       function renameFarm() {
          var farmName = prompt("What farm name?", "type here");
@@ -45,6 +55,7 @@
       <li>People like to eat potatoes</li>
       <li id='sales'>Last year you didn't grow anything</li>
     </UL>
+    <div><strong>... choose an action...</strong></div>
       <button onclick="increase()">Grow potatoes</button>
       <button onclick="renameFarm()">Change farm name</button>
   </body>
